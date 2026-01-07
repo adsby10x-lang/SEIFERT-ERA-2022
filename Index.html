@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEIFERT ERA 2022</title>
+
+<!-- ================= META PIXEL CODE ================= -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+/* 🔴 REPLACE PIXEL ID BELOW */
+fbq('init', 'PIXEL_ID_HERE', {
+  em: 'user@example.com'
+});
+
+/* SUBSCRIBE EVENT – PAGE LOAD (Currency Fix) */
+fbq('track', 'Subscribe', { value: 0.00, currency: 'INR' });
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+</noscript>
+<!-- =================================================== -->
+
+<!-- ================= CLEAN CSS ================= -->
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:#e5e7eb;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.wrapper{
+  width:100%;
+  max-width:420px;
+  padding:28px 18px;
+  text-align:center;
+}
+
+.dp{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #22d3ee;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.subtext{
+  font-size:14px;
+  color:#94a3b8;
+  margin-bottom:22px;
+}
+
+.timer{
+  font-size:16px;
+  margin-bottom:18px;
+  color:#facc15;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  font-size:18px;
+  font-weight:600;
+  border:none;
+  border-radius:8px;
+  background:#334155;
+  color:#94a3b8;
+  cursor:not-allowed;
+  transition:all .3s ease;
+}
+
+button.active{
+  background:#22d3ee;
+  color:#020617;
+  cursor:pointer;
+}
+
+button.active:hover{
+  opacity:.9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <img src="FB_IMG_1767684000680.jpg" class="dp" alt="SEIFERT ERA 2022">
+
+  <h1>SEIFERT ERA 2022</h1>
+  <div class="subtext">Official Telegram Channel – Premium Updates</div>
+
+  <div class="timer" id="timerText">
+    Joining Link Updating... (3s)
+  </div>
+
+  <button id="joinBtn" disabled>
+    Please Wait...
+  </button>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+let timeLeft = 3;
+const timerText = document.getElementById("timerText");
+const joinBtn = document.getElementById("joinBtn");
+
+/* COUNTDOWN TIMER */
+const countdown = setInterval(() => {
+  timeLeft--;
+  timerText.innerText = "Joining Link Updating... (" + timeLeft + "s)";
+
+  if(timeLeft <= 0){
+    clearInterval(countdown);
+    timerText.innerText = "Link Ready";
+    joinBtn.innerText = "Join Now";
+    joinBtn.disabled = false;
+    joinBtn.classList.add("active");
+  }
+}, 1000);
+
+/* BUTTON CLICK LOGIC */
+joinBtn.addEventListener("click", () => {
+
+  /* EVENT TRACKING */
+  fbq('track', 'Lead');
+  fbq('track', 'Contact');
+
+  /* REDIRECT DELAY – 500ms */
+  setTimeout(() => {
+    window.location.href = "https://t.me/+3fgXftnStZw2YzVl";
+  }, 500);
+
+});
+</script>
+
+</body>
+</html>
