@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEIFERT ERA 2022 | Join Telegram</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEIFERT ERA 2022</title>
 
-  <!-- Meta Pixel Code (SIMPLE – AS REQUESTED) -->
+  <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -22,141 +22,163 @@
 
   <noscript>
     <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=880438151540472&ev=PageView&noscript=1"/>
+    src="https://www.facebook.com/tr?id=880438151540472&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background:
-        radial-gradient(circle at top, rgba(255,215,0,0.25), transparent 60%),
-        radial-gradient(circle at bottom, rgba(56,189,248,0.25), transparent 60%),
-        #020617;
-      color: #fff;
     }
 
-    .card {
-      background: rgba(2,6,23,0.92);
-      border-radius: 20px;
-      padding: 32px 22px;
-      max-width: 360px;
-      width: 100%;
+    .container {
       text-align: center;
-      box-shadow: 0 0 50px rgba(255,215,0,0.25);
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
     }
 
-    .dp {
-      width: 110px;
-      height: 110px;
+    .profile-wrapper {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
       border-radius: 50%;
-      margin: 0 auto 16px;
-      border: 4px solid gold;
-      box-shadow: 0 0 25px rgba(255,215,0,0.8);
-      background: url('FB_IMG_1767684000680.jpg') center/cover no-repeat;
+      padding: 5px;
+      background: radial-gradient(circle, #00ff8a, transparent 70%);
+    }
+
+    .profile {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #00ff8a;
+      background: #111;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .online-dot {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      background: #00ff8a;
+      border-radius: 50%;
+      border: 3px solid #000;
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 26px;
       margin-bottom: 6px;
+      letter-spacing: 1px;
     }
 
-    p {
+    .status {
+      color: #00ff8a;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .timer {
+      background: #0d1b16;
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 30px;
+      margin-bottom: 30px;
       font-size: 14px;
-      color: #cbd5f5;
-      margin-bottom: 18px;
     }
 
-    .countdown-text {
-      font-size: 14px;
-      color: #facc15;
-      margin-bottom: 6px;
+    .timer span {
+      color: #ff4d4d;
+      font-weight: 600;
+      margin-left: 5px;
     }
 
-    .countdown {
-      font-size: 34px;
-      font-weight: bold;
-      color: #38bdf8;
-      margin-bottom: 22px;
-    }
-
-    .join-btn {
-      background: linear-gradient(90deg, gold, #facc15);
-      color: #020617;
-      border: none;
-      padding: 15px;
+    .btn {
+      display: block;
       width: 100%;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 0 35px rgba(255,215,0,1);
-      animation: pulse 1.4s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 15px rgba(255,215,0,0.6); }
-      50% { box-shadow: 0 0 45px rgba(255,215,0,1); }
-      100% { box-shadow: 0 0 15px rgba(255,215,0,0.6); }
+      background: #00ff8a;
+      color: #000;
+      text-decoration: none;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 12px;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
 
-  <div class="card">
-    <div class="dp"></div>
+    <div class="profile-wrapper">
+      <div class="profile">
+        <img src="/FB_IMG_1767684000680.jpg" alt="DP">
+      </div>
+      <div class="online-dot"></div>
+    </div>
 
     <h1>SEIFERT ERA 2022</h1>
-    <p>Premium Insights • Trusted Telegram Channel</p>
+    <div class="status">• ONLINE • FREE • OFFICIAL</div>
 
-    <div class="countdown-text">Auto redirect in</div>
-    <div class="countdown" id="timer">6</div>
+    <div class="timer">
+      LINK EXPIRING:
+      <span id="countdown">01:00</span>
+    </div>
 
-    <button class="join-btn" onclick="joinTelegram()">
-      JOIN TELEGRAM CHANNEL
-    </button>
+    <a class="btn" id="joinBtn" href="https://t.me/+3fgXftnStZw2YzVl">
+      JOIN CHANNEL NOW
+    </a>
+
   </div>
 
   <script>
-    var seconds = 6;
-    var redirected = false;
+    const telegramLink = "https://t.me/+3fgXftnStZw2YzVl";
+    let clicked = false;
 
-    var interval = setInterval(function () {
-      seconds--;
-      document.getElementById("timer").innerText = seconds;
+    // Countdown
+    let time = 60;
+    const countdownEl = document.getElementById("countdown");
 
-      if (seconds <= 0) {
-        clearInterval(interval);
-        autoRedirect();
-      }
+    const timer = setInterval(() => {
+      time--;
+      countdownEl.textContent = "00:" + (time < 10 ? "0" + time : time);
+      if (time <= 0) clearInterval(timer);
     }, 1000);
 
-    function joinTelegram() {
-      if (redirected) return;
-      redirected = true;
-
+    // Button click
+    document.getElementById("joinBtn").addEventListener("click", () => {
+      clicked = true;
       fbq('track', 'Lead');
-      fbq('track', 'Contact');
+    });
 
-      setTimeout(function () {
-        window.location.href = 'https://t.me/+3fgXftnStZw2YzVl';
-      }, 500);
-    }
-
-    function autoRedirect() {
-      if (redirected) return;
-      redirected = true;
-
-      setTimeout(function () {
-        window.location.href = 'https://t.me/+3fgXftnStZw2YzVl';
-      }, 500);
-    }
+    // Auto redirect after 10 seconds
+    setTimeout(() => {
+      if (!clicked) {
+        fbq('track', 'Lead');
+        window.location.href = telegramLink;
+      }
+    }, 10000);
   </script>
 
 </body>
