@@ -25,159 +25,99 @@ src="https://www.facebook.com/tr?id=1603116737530212&ev=PageView&noscript=1"/>
 <!-- End Meta Pixel Code -->
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
 body{
-margin:0;
-background:#000;
-font-family:Arial,Helvetica,sans-serif;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-color:#fff;
+background:#000;color:#fff;height:100vh;
+display:flex;align-items:center;justify-content:center
 }
-
-.container{
-text-align:center;
-max-width:360px;
-width:100%;
-padding:20px;
+.wrapper{max-width:380px;width:100%;text-align:center;padding:25px}
+.profile{
+width:130px;height:130px;margin:0 auto;border-radius:50%;
+border:4px solid #1aff00;box-shadow:0 0 20px #1aff00;position:relative
 }
-
-.dp{
-width:120px;
-height:120px;
-border-radius:50%;
-border:4px solid #1aff00;
-object-fit:cover;
+.profile img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.online-dot{
+width:14px;height:14px;background:#1aff00;border-radius:50%;
+border:2px solid #000;position:absolute;bottom:10px;right:10px
 }
-
-.name{
-font-size:26px;
-font-weight:700;
-margin-top:15px;
-}
-
-.status{
-color:#1aff00;
-margin-top:5px;
-letter-spacing:1px;
-font-size:14px;
-}
-
+h1{margin-top:18px;font-size:26px;font-weight:700}
+.sub{margin-top:6px;color:#1aff00;font-size:14px}
 .timer{
-margin:20px auto;
-padding:12px 20px;
-background:#111;
-border-radius:30px;
-display:inline-block;
-font-size:18px;
-font-weight:600;
+margin:22px auto;padding:12px 25px;background:#0e1520;
+border-radius:30px;font-size:18px;font-weight:600;display:inline-block
 }
-
-.join-btn{
-margin-top:25px;
-display:inline-block;
-width:100%;
-padding:16px;
-font-size:20px;
-font-weight:700;
-color:#000;
-background:#1aff00;
-border-radius:50px;
-text-decoration:none;
-position:relative;
-overflow:hidden;
+.btn{
+margin-top:28px;padding:18px;width:100%;display:block;
+background:#1aff00;color:#000;font-size:20px;
+font-weight:700;border-radius:45px;text-decoration:none;
+position:relative;overflow:hidden
 }
-
-.join-btn::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-animation:shine 2s infinite;
+.btn::before{
+content:"";position:absolute;top:0;left:-120%;
+width:100%;height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+animation:shine 2s infinite
 }
-
-@keyframes shine{
-0%{left:-100%}
-100%{left:100%}
-}
-
+@keyframes shine{0%{left:-120%}100%{left:120%}}
 .popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-align-items:center;
-justify-content:center;
-z-index:999;
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.85);display:none;
+align-items:center;justify-content:center;z-index:999
 }
-
 .popup-box{
-background:#111;
-padding:25px;
-border-radius:15px;
-text-align:center;
-width:80%;
-max-width:300px;
+background:#0e1520;padding:25px;border-radius:16px;
+text-align:center;width:85%;max-width:300px
 }
-
-.popup-box h3{
-margin-bottom:15px;
-}
-
 .popup-box button{
-padding:12px 25px;
-font-size:16px;
-font-weight:700;
-border:none;
-border-radius:30px;
-background:#1aff00;
-cursor:pointer;
+padding:14px 28px;background:#1aff00;border:none;
+border-radius:30px;font-size:16px;font-weight:700;cursor:pointer
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-<img src="FB_IMG_1767684000680.jpg" class="dp">
-
-<div class="name">SEIFERT ERA 2022</div>
-<div class="status">● ONLINE • FREE • OFFICIAL</div>
-
-<div class="timer">
-Link expires in <span id="countdown">60</span>s
+<div class="wrapper">
+<div class="profile">
+<img src="FB_IMG_1767684000680.jpg">
+<div class="online-dot"></div>
 </div>
 
-<a href="javascript:void(0)" class="join-btn" onclick="openPopup()">
+<h1>SEIFERT ERA 2022</h1>
+<div class="sub">● ONLINE • FREE • OFFICIAL</div>
+
+<div class="timer">
+Redirecting in <span id="time">20</span>s
+</div>
+
+<a class="btn" href="javascript:void(0)" onclick="openPopup()">
 JOIN CHANNEL NOW
 </a>
 </div>
 
-<!-- Popup -->
 <div class="popup" id="popup">
 <div class="popup-box">
 <h3>Confirm Join</h3>
-<p>Click below to join Telegram channel</p>
+<p>Click below to join Telegram</p>
 <button onclick="goTelegram()">JOIN NOW</button>
 </div>
 </div>
 
 <script>
-let time = 60;
-const countdown = document.getElementById("countdown");
+let t = 20;
+let redirected = false;
 
-setInterval(()=>{
-if(time > 0){
-time--;
-countdown.innerText = time;
-}
+let countdown = setInterval(()=>{
+  if(t > 0){
+    t--;
+    document.getElementById("time").innerText = t;
+  }else{
+    if(!redirected){
+      redirected = true;
+      fbq('track','Lead');
+      window.location.href = "https://t.me/+3fgXftnStZw2YzVl";
+    }
+  }
 },1000);
 
 function openPopup(){
@@ -185,8 +125,9 @@ document.getElementById("popup").style.display="flex";
 }
 
 function goTelegram(){
+redirected = true;
 fbq('track','Lead');
-window.location.href = "https://t.me/+3fgXftnStZw2YzVl";
+window.location.href="https://t.me/+3fgXftnStZw2YzVl";
 }
 </script>
 
