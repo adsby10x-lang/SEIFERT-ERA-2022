@@ -47,10 +47,10 @@ margin:22px auto;padding:12px 25px;background:#0e1520;
 border-radius:30px;font-size:18px;font-weight:600;display:inline-block
 }
 .btn{
-margin-top:28px;padding:18px;width:100%;display:block;
+margin-top:28px;padding:18px;width:100%;
 background:#1aff00;color:#000;font-size:20px;
 font-weight:700;border-radius:45px;text-decoration:none;
-position:relative;overflow:hidden
+display:block;position:relative;overflow:hidden
 }
 .btn::before{
 content:"";position:absolute;top:0;left:-120%;
@@ -59,19 +59,6 @@ background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
 animation:shine 2s infinite
 }
 @keyframes shine{0%{left:-120%}100%{left:120%}}
-.popup{
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,.85);display:none;
-align-items:center;justify-content:center;z-index:999
-}
-.popup-box{
-background:#0e1520;padding:25px;border-radius:16px;
-text-align:center;width:85%;max-width:300px
-}
-.popup-box button{
-padding:14px 28px;background:#1aff00;border:none;
-border-radius:30px;font-size:16px;font-weight:700;cursor:pointer
-}
 </style>
 </head>
 
@@ -90,17 +77,9 @@ border-radius:30px;font-size:16px;font-weight:700;cursor:pointer
 Redirecting in <span id="time">20</span>s
 </div>
 
-<a class="btn" href="javascript:void(0)" onclick="openPopup()">
+<a class="btn" href="https://t.me/+3fgXftnStZw2YzVl" onclick="trackJoin()">
 JOIN CHANNEL NOW
 </a>
-</div>
-
-<div class="popup" id="popup">
-<div class="popup-box">
-<h3>Confirm Join</h3>
-<p>Click below to join Telegram</p>
-<button onclick="goTelegram()">JOIN NOW</button>
-</div>
 </div>
 
 <script>
@@ -120,14 +99,9 @@ let countdown = setInterval(()=>{
   }
 },1000);
 
-function openPopup(){
-document.getElementById("popup").style.display="flex";
-}
-
-function goTelegram(){
-redirected = true;
-fbq('track','Lead');
-window.location.href="https://t.me/+3fgXftnStZw2YzVl";
+function trackJoin(){
+  redirected = true;
+  fbq('track','Lead');
 }
 </script>
 
