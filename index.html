@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SEIFERT ERA 2022</title>
 
-<!-- ================= META PIXEL CODE ================= -->
+<!-- ================= META PIXEL ================= -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,150 +16,200 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
-fbq('init', '1603116737530212');
-fbq('track', 'PageView');
+fbq('init','1603116737530212');
+fbq('track','PageView');
 </script>
-
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1603116737530212&ev=PageView&noscript=1"/>
 </noscript>
-<!-- =============== END META PIXEL =================== -->
+<!-- ============================================== -->
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
 
 body{
-    min-height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+min-height:100vh;
+background:radial-gradient(circle at top,#0c1328,#02040f);
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
 }
 
-.card{
-    width:90%;
-    max-width:380px;
-    background:rgba(0,0,0,0.6);
-    border-radius:20px;
-    padding:25px;
-    text-align:center;
-    color:#fff;
-    box-shadow:0 0 25px rgba(0,0,0,0.7);
+.container{width:95%;max-width:420px;}
+
+.profile{text-align:center;margin-bottom:20px;}
+
+.avatar{
+width:110px;
+height:110px;
+margin:auto;
+border-radius:50%;
+padding:4px;
+background:linear-gradient(135deg,#00f0ff,#a855f7);
 }
 
-.title{
-    font-size:22px;
-    font-weight:700;
-    color:#ffd400;
-    margin-bottom:8px;
+.avatar img{
+width:100%;
+height:100%;
+border-radius:50%;
+object-fit:cover;
 }
 
-.subtitle{
-    font-size:14px;
-    opacity:0.9;
-    margin-bottom:15px;
+.profile h1{
+margin-top:12px;
+font-size:22px;
+font-weight:700;
 }
 
-.timer{
-    font-size:42px;
-    font-weight:700;
-    color:#00ffb3;
+.followers{
+color:#4adeff;
+font-size:14px;
+margin-top:4px;
 }
 
-.timer-text{
-    font-size:13px;
-    opacity:0.8;
-    margin-bottom:20px;
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin:25px 0;
 }
 
-.dp{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    border:4px solid #ffd400;
-    margin:0 auto 20px;
-    overflow:hidden;
+.stat{
+background:#0b1225;
+padding:15px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 15px rgba(0,255,255,.08);
 }
 
-.dp img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.stat h2{
+font-size:22px;
+font-weight:700;
+color:#00f0ff;
+}
+
+.stat p{
+font-size:12px;
+opacity:.8;
+margin-top:4px;
 }
 
 .join-btn{
-    display:block;
-    width:100%;
-    padding:14px;
-    background:#0088cc;
-    color:#fff;
-    font-size:16px;
-    font-weight:600;
-    border-radius:30px;
-    text-decoration:none;
-    margin-bottom:18px;
-    transition:0.3s;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+margin:25px 0;
+padding:16px;
+border-radius:30px;
+font-size:16px;
+font-weight:600;
+text-decoration:none;
+color:#fff;
+background:linear-gradient(135deg,#00c6ff,#a855f7);
+box-shadow:0 0 25px rgba(0,200,255,.35);
 }
 
-.join-btn:hover{
-    background:#00aaff;
+.timer-box{
+background:#0b1225;
+border-radius:18px;
+padding:18px;
+text-align:center;
+margin-bottom:20px;
 }
 
-.footer-text{
-    font-size:14px;
-    font-weight:600;
-    color:#ffd400;
+.timer-title{
+color:#4adeff;
+font-size:15px;
+margin-bottom:12px;
+}
+
+.timer{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+.time{
+background:#020617;
+padding:10px;
+border-radius:12px;
+}
+
+.time h3{font-size:20px;}
+.time p{font-size:10px;opacity:.6;}
+
+.feature{
+background:#0b1225;
+border-radius:18px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 0 20px rgba(168,85,247,.08);
+}
+
+.feature h4{
+font-size:15px;
+margin-bottom:6px;
+}
+
+.feature p{
+font-size:13px;
+opacity:.75;
 }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="card">
-
-    <div class="title">SEIFERT ERA 2022</div>
-    <div class="subtitle">Trusted Cricket Predictions</div>
-
-    <div class="timer" id="countdown">0:51</div>
-    <div class="timer-text">Seconds Left</div>
-
-    <div class="dp">
-        <img src="FB_IMG_1767684000680.jpg" alt="DP">
-    </div>
-
-    <a class="join-btn"
-       href="https://t.me/+v07JQY3wa9FmZDM1"
-       onclick="fbq('track','Lead');">
-        JOIN THE CHANNEL NOW
-    </a>
-
-    <div class="footer-text">🏏 CRICKET EXPERT | MATCH FORECAST</div>
-
+<div class="profile">
+<div class="avatar">
+<img src="FB_IMG_1767684000680.jpg">
+</div>
+<h1>SEIFERT ERA 2022</h1>
+<div class="followers">👥 4k+ Followers</div>
 </div>
 
-<script>
-let time = 51;
-const timer = document.getElementById("countdown");
+<div class="stats">
+<div class="stat"><h2>1.3+</h2><p>Subscribers</p></div>
+<div class="stat"><h2>1,547</h2><p>Predictions</p></div>
+<div class="stat"><h2>94%</h2><p>Accuracy</p></div>
+</div>
 
-setInterval(() => {
-    if(time > 0){
-        time--;
-        timer.innerHTML = "0:" + (time < 10 ? "0"+time : time);
-    }
-}, 1000);
-</script>
+<a class="join-btn" href="https://t.me/+v07JQY3wa9FmZDM1"
+onclick="fbq('track','Lead');">
+✈ Join Telegram Channel
+</a>
 
+<div class="timer-box">
+<div class="timer-title">Next Prediction In</div>
+<div class="timer">
+<div class="time"><h3>00</h3><p>Days</p></div>
+<div class="time"><h3>01</h3><p>Hours</p></div>
+<div class="time"><h3>00</h3><p>Minutes</p></div>
+<div class="time"><h3>00</h3><p>Seconds</p></div>
+</div>
+</div>
+
+<div class="feature">
+<h4>⏱ Pre-match Predictions</h4>
+<p>Daily expert analysis before matches with high win rate.</p>
+</div>
+
+<div class="feature">
+<h4>✅ Transparent Results</h4>
+<p>Verified historical records with proven outcomes.</p>
+</div>
+
+<div class="feature">
+<h4>🔔 In-Play Alerts</h4>
+<p>Instant live match alerts & opportunities.</p>
+</div>
+
+</div>
 </body>
 </html>
