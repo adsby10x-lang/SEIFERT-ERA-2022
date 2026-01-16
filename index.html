@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SEIFERT ERA 2022</title>
 
-<!-- Meta Pixel Code (SAME) -->
+<!-- ================= META PIXEL CODE ================= -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -15,71 +15,151 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '1603116737530212');
 fbq('track', 'PageView');
 </script>
+
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1603116737530212&ev=PageView&noscript=1"/>
 </noscript>
-<!-- End Meta Pixel Code -->
+<!-- =============== END META PIXEL =================== -->
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
 body{
-background:#000;color:#fff;height:100vh;
-display:flex;align-items:center;justify-content:center
+    min-height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("https://images.unsplash.com/photo-1509027572446-af8401acfdc3");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-.wrapper{max-width:380px;width:100%;text-align:center;padding:25px}
-.profile{
-width:130px;height:130px;margin:0 auto;border-radius:50%;
-border:4px solid #1aff00;box-shadow:0 0 20px #1aff00;position:relative
+
+.card{
+    width:90%;
+    max-width:380px;
+    background:rgba(0,0,0,0.6);
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 0 25px rgba(0,0,0,0.7);
 }
-.profile img{width:100%;height:100%;border-radius:50%;object-fit:cover}
-.online-dot{
-width:14px;height:14px;background:#1aff00;border-radius:50%;
-border:2px solid #000;position:absolute;bottom:10px;right:10px
+
+.title{
+    font-size:22px;
+    font-weight:700;
+    color:#ffd400;
+    margin-bottom:8px;
 }
-h1{margin-top:18px;font-size:26px;font-weight:700}
-.sub{margin-top:6px;color:#1aff00;font-size:14px}
-.note{
-margin-top:16px;font-size:13px;color:#ccc
+
+.subtitle{
+    font-size:14px;
+    opacity:0.9;
+    margin-bottom:15px;
 }
-.btn{
-margin-top:26px;padding:18px;width:100%;
-background:#1aff00;color:#000;font-size:20px;
-font-weight:700;border-radius:45px;text-decoration:none;
-display:block;position:relative;overflow:hidden
+
+.timer{
+    font-size:42px;
+    font-weight:700;
+    color:#00ffb3;
 }
-.btn::before{
-content:"";position:absolute;top:0;left:-120%;
-width:100%;height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
-animation:shine 2s infinite
+
+.timer-text{
+    font-size:13px;
+    opacity:0.8;
+    margin-bottom:20px;
 }
-@keyframes shine{0%{left:-120%}100%{left:120%}}
+
+.dp{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:4px solid #ffd400;
+    margin:0 auto 20px;
+    overflow:hidden;
+}
+
+.dp img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.join-btn{
+    display:block;
+    width:100%;
+    padding:14px;
+    background:#0088cc;
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    border-radius:30px;
+    text-decoration:none;
+    margin-bottom:18px;
+    transition:0.3s;
+}
+
+.join-btn:hover{
+    background:#00aaff;
+}
+
+.footer-text{
+    font-size:14px;
+    font-weight:600;
+    color:#ffd400;
+}
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-  <div class="profile">
-    <img src="FB_IMG_1767684000680.jpg">
-    <div class="online-dot"></div>
-  </div>
+<div class="card">
 
-  <h1>SEIFERT ERA 2022</h1>
-  <div class="sub">● ONLINE • FREE • OFFICIAL</div>
+    <div class="title">SEIFERT ERA 2022</div>
+    <div class="subtitle">Trusted Cricket Predictions</div>
 
-  <div class="note">
-    Telegram open hone ke baad <b>JOIN</b> button dabaye
-  </div>
+    <div class="timer" id="countdown">0:51</div>
+    <div class="timer-text">Seconds Left</div>
 
-  <a class="btn" href="https://t.me/+v07JQY3wa9FmZDM1" target="_blank">
-    JOIN CHANNEL NOW
-  </a>
+    <div class="dp">
+        <img src="FB_IMG_1767684000680.jpg" alt="DP">
+    </div>
+
+    <a class="join-btn"
+       href="https://t.me/+v07JQY3wa9FmZDM1"
+       onclick="fbq('track','Lead');">
+        JOIN THE CHANNEL NOW
+    </a>
+
+    <div class="footer-text">🏏 CRICKET EXPERT | MATCH FORECAST</div>
+
 </div>
+
+<script>
+let time = 51;
+const timer = document.getElementById("countdown");
+
+setInterval(() => {
+    if(time > 0){
+        time--;
+        timer.innerHTML = "0:" + (time < 10 ? "0"+time : time);
+    }
+}, 1000);
+</script>
 
 </body>
 </html>
